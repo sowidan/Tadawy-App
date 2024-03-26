@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->string('phone');
 
-            $table->string('photo');
+            $table->string('photo')->nullable();
 
             $table->date('date_of_birth')->nullable();
 

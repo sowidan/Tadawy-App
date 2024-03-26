@@ -13,18 +13,6 @@ class RoleDefaultData extends Seeder
      */
     public function run(): void
     {
-        $adminPermissions = [
-            'edit patient',
-            'add patient',
-            'delete patient',
-            'edit doctor',
-            'add doctor ',
-            'delete doctor'
-        ];
-
-        $adminRole = Role::create(['name' => 'admin']);
-        $permissions = Permission::create($adminPermissions);
-        $adminRole->givePermissionTo($permissions);
 
         $doctorPermissions = [
             'edit patient',
@@ -44,6 +32,6 @@ class RoleDefaultData extends Seeder
         $permissions = Permission::create($patientPermissions);
         $patientRole->givePermissionTo($permissions);
 
-        
+
     }
 }

@@ -5,11 +5,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClinicsController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FitnessController;
+use App\Http\Controllers\InfantIncubatorController;
 use App\Http\Controllers\MainTestController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\X_rayController;
 use App\Models\Patients;
 use App\Models\Doctors;
+use App\Models\InfantIncubator;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,7 @@ Route::middleware('auth:patientApi')->group(function(){
 //! public routes
 Route::post('/doctor-login',[DoctorController::class,'doctor_login']);
 Route::post('/patient-login',[PatientController::class,'patient_login']);
+Route::post('/getDataFromInfantIncubators',[InfantIncubatorController::class,'getDataFromInfantIncubators']);
 
 
 //! private routes
